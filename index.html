@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dental Wellness Centre — Friendly Neighbourhood Dentist | Full-Service Dental &amp; Cosmetic Clinic</title>
-<meta name="description" content="A friendly neighbourhood dental clinic offering conservative, time-tested treatment — preventive care, root canal treatment, gum treatment, cosmetic dentistry and smile design. Repair. Reconstruct. Replace.">
+<meta name="description" content="A friendly neighbourhood dental clinic offering conservative, time-tested treatment — preventive care, root canal treatment, gum treatment, cosmetic dentistry and smile design. Repair. Restore. Replace.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -49,10 +49,10 @@ section{padding:96px 0;position:relative}
 /* header */
 header{position:sticky;top:0;z-index:80;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--edge);transition:box-shadow .3s}
 header.stuck{box-shadow:0 10px 30px -20px rgba(19,42,42,.5)}
-.bar{display:flex;align-items:center;gap:20px;height:78px;max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.bar{display:flex;align-items:center;gap:20px;height:86px;max-width:var(--maxw);margin:0 auto;padding:0 24px}
 .brand{display:flex;align-items:center;gap:11px;text-decoration:none;margin-right:auto}
 .brand svg,.brand img{width:40px;height:40px;flex:none}
-.brand-mark{border-radius:12px;object-fit:contain;background:#fff;padding:2px;box-shadow:0 0 0 1px var(--edge)}
+.brand img.brand-mark{width:68px;height:68px;border-radius:0;object-fit:contain;background:transparent;padding:0;box-shadow:none;border:0;mix-blend-mode:multiply}
 .brand b{font-family:Fraunces,serif;font-weight:600;font-size:1.16rem;color:var(--navy);display:block;line-height:1.15}
 .brand em{font-style:normal;font-size:.72rem;color:var(--teal-deep);letter-spacing:.09em;text-transform:uppercase}
 nav.main{display:flex;gap:24px}
@@ -106,7 +106,7 @@ nav.main a:hover::after{width:100%}
 .chip .dot{width:34px;height:34px;border-radius:50%;background:var(--wash);display:grid;place-items:center;color:var(--teal-deep);flex:none}
 .chip-a{left:-34px;top:56px}
 .chip-badge{align-items:center;gap:13px}
-.badge-mini{width:56px;height:56px;flex:none;border-radius:14px;background:#fff;object-fit:contain;padding:4px;box-shadow:0 4px 10px rgba(0,0,0,.18)}
+.badge-mini{width:64px;height:64px;flex:none;border-radius:0;background:transparent;object-fit:contain;padding:0;box-shadow:none;mix-blend-mode:multiply}
 .logo-chip{display:inline-flex;background:#fff;border-radius:12px;padding:6px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
 .brand-mark-ftr{width:34px;height:34px;display:block;object-fit:contain}
 .chip-b{right:-24px;bottom:74px}
@@ -293,8 +293,9 @@ footer li{padding:5px 0}
   nav.main a{padding:14px 2px;border-bottom:1px solid var(--edge);font-size:1rem}
   .burger{display:flex;width:40px;height:40px}
   .header-cta{display:none}
-  .bar{height:64px;gap:12px}
+  .bar{height:70px;gap:12px}
   .brand svg{width:34px;height:34px}
+  .brand img.brand-mark{width:54px;height:54px}
   .brand b{font-size:1rem}
   .brand em{font-size:.64rem}
 
@@ -394,6 +395,40 @@ section{overflow:hidden}
 /* icon burst divider for FAQ / appointment kicker */
 .burst{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;background:var(--wash);color:var(--teal-deep);margin-bottom:16px}
 @media (max-width:420px){.trust div{flex:1 1 100%}}
+
+/* services */
+.svc-filter{margin-bottom:14px}
+.svc-chip{border:1px solid var(--edge);background:#fff;color:var(--navy-2);border-radius:999px;padding:9px 18px;font:inherit;font-size:.88rem;font-weight:500;cursor:pointer;transition:all .2s;white-space:nowrap}
+.svc-chip:hover{border-color:var(--teal-lt)}
+.svc-chip[aria-pressed="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.svc-count{font-size:.85rem;color:var(--navy-2);opacity:.8;margin:0 0 20px}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.svc{background:#fff;border:1px solid var(--edge);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 20px 40px -34px rgba(19,42,42,.5);transition:transform .25s,box-shadow .25s,border-color .25s}
+.svc:hover{transform:translateY(-4px);border-color:var(--teal-lt);box-shadow:0 28px 50px -30px rgba(19,42,42,.45)}
+.svc[hidden]{display:none}
+.svc.pop{animation:fade .35s ease}
+.svc figure{margin:0;aspect-ratio:8/5;overflow:hidden}
+.svc figure svg{width:100%;height:100%;display:block;transition:transform .5s}
+.svc:hover figure svg{transform:scale(1.05)}
+.svc-body{padding:18px 22px 22px;display:flex;flex-direction:column;flex:1}
+.svc-tag{align-self:flex-start;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-deep);background:var(--wash);border-radius:999px;padding:4px 11px;margin-bottom:10px}
+.svc h3{font-size:1.14rem;margin:0 0 .35em}
+.svc p{font-size:.93rem;line-height:1.55;margin:0 0 14px;color:var(--ink)}
+.svc-ask{margin-top:auto;font-weight:600;font-size:.88rem;text-decoration:none;color:var(--teal-deep)}
+.svc-ask span{display:inline-block;transition:transform .2s}
+.svc-ask:hover span{transform:translateX(4px)}
+.svc-help{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:34px;padding:28px 32px;background:var(--navy);border-radius:22px;color:#e6f0ee}
+.svc-help h3{color:#fff;margin:0 0 .3em}
+.svc-help p{margin:0;color:#c9dcd8;max-width:56ch}
+.svc-help .btn{flex:none;background:#fff;color:var(--navy)}
+@media (max-width:960px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){
+  .svc-grid{grid-template-columns:1fr;gap:16px}
+  .svc figure{aspect-ratio:16/9}
+  .svc-chip{flex:none;padding:8px 15px;font-size:.84rem}
+  .svc-help{flex-direction:column;align-items:flex-start;padding:24px}
+}
+@media (prefers-reduced-motion:reduce){.svc,.svc figure svg{transition:none}}
 </style>
 </head>
 <body>
@@ -403,7 +438,7 @@ section{overflow:hidden}
 <nav class="dotnav" aria-label="Section navigation">
   <a href="#top" data-label="Home" class="on"></a>
   <a href="#about" data-label="Philosophy"></a>
-  <a href="#treatments" data-label="Treatments"></a>
+  <a href="#treatments" data-label="Services"></a>
   <a href="#cosmetic" data-label="Cosmetic"></a>
   <a href="#why" data-label="Why us"></a>
   <a href="#appointment" data-label="Book"></a>
@@ -416,7 +451,7 @@ section{overflow:hidden}
       <span><b>Dental Wellness Centre</b><em>Est. 2013 · Dr. Amitha K S</em></span>
     </a>
     <nav class="main" id="nav" aria-label="Main">
-      <a href="#top">Home</a><a href="#about">About</a><a href="#treatments">Treatments</a><a href="#cosmetic">Cosmetic</a><a href="#why">Why Choose Us</a><a href="#contact">Contact</a>
+      <a href="#top">Home</a><a href="#about">About</a><a href="#treatments">Services</a><a href="#cosmetic">Cosmetic</a><a href="#why">Why Choose Us</a><a href="#contact">Contact</a>
     </nav>
     <a class="btn btn-primary btn-sm header-cta" href="#appointment">Book an appointment</a>
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><i></i></button>
@@ -433,10 +468,10 @@ section{overflow:hidden}
       <p class="kicker">Full-service neighbourhood dental clinic</p>
       <h1><span>Your friendly</span><span class="accent">neighbourhood dentist<svg viewBox="0 0 300 16" preserveAspectRatio="none" aria-hidden="true"><path d="M2 10c40-10 80-10 120-4s90 8 140 2s34-6 34-6" fill="none" stroke="#5fb8ae" stroke-width="3" stroke-linecap="round"/></svg></span></h1>
       <p class="lede">Thoughtful dental care focused on <span class="key">preserving your natural teeth</span>, restoring function and creating healthy, confident smiles.</p>
-      <div class="rrr"><i>Repair.</i><i>Reconstruct.</i><i>Replace.</i></div>
+      <div class="rrr"><i>Repair.</i><i>Restore.</i><i>Replace.</i></div>
       <div class="cta-row">
         <a class="btn btn-primary" href="#appointment">Book an appointment</a>
-        <a class="btn btn-ghost" href="#treatments">Explore treatments</a>
+        <a class="btn btn-ghost" href="#treatments">Explore services</a>
       </div>
       <div class="trust">
         <div><svg class="tick" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 3v6c0 5-3 7.5-7 9-4-1.5-7-4-7-9V6z"/></svg><span>Conservative, time-tested treatment</span></div>
@@ -491,7 +526,7 @@ section{overflow:hidden}
 
 <div class="stats reveal">
   <div class="wrap stat-row">
-    <div class="stat"><span class="num"><em>3</em>-stage</span><span class="lab">Repair · Reconstruct · Replace philosophy</span></div>
+    <div class="stat"><span class="num"><em>3</em>-stage</span><span class="lab">Repair · Restore · Replace philosophy</span></div>
     <div class="stat"><span class="num"><em>8</em> areas</span><span class="lab">of dental &amp; cosmetic care, one clinic</span></div>
     <div class="stat"><span class="num"><em>4</em>-step</span><span class="lab">consultation-to-follow-up journey</span></div>
     <div class="stat"><span class="num"><em>1st</em> visit</span><span class="lab">always starts with a detailed consultation</span></div>
@@ -552,11 +587,10 @@ section{overflow:hidden}
   <div class="orn" style="right:6%;top:8%" aria-hidden="true"><svg width="90" height="90" viewBox="0 0 90 90"><circle cx="45" cy="45" r="44" fill="none" stroke="#c9862f" stroke-width="1.4" stroke-dasharray="3 7"/></svg></div>
   <div class="wrap split3 reveal">
     <div>
-      <p class="kicker">Our philosophy</p>
-      <h2>Treatment with a conservative approach</h2>
-      <p>We believe good dentistry is not about doing more. It is about <span class="key">doing what is necessary, doing it well</span>, and preserving as much of your natural tooth and oral health as possible.</p>
+      <p class="kicker">Treatment philosophy</p>
+      <h2>Repair. Restore. Replace.</h2>
+      <p>Our philosophy is simple: <span class="key">preserve natural teeth whenever possible</span>, restore what is damaged, and replace only when necessary.</p>
       <p>Every treatment begins with a detailed consultation. We take time to understand the problem, explain the available options and recommend treatment that suits your <span class="key">long-term oral health</span>.</p>
-      <p class="quote">Preserve whenever possible. Repair when we can. Reconstruct when needed. Replace only when necessary.</p>
     </div>
     <div>
       <h3>What guides every treatment plan</h3>
@@ -584,7 +618,6 @@ section{overflow:hidden}
         <span class="doc-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-6.3 7-11a7 7 0 10-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Dental Wellness Centre</span>
       </div>
       <h4 style="margin-bottom:2px">Dr. Amitha K S</h4>
-      <p style="font-size:.9rem;margin-bottom:0">Leads every consultation personally, with a focus on conservative, long-lasting treatment.</p>
       <div class="doc-vals">
         <span>Est. 2013</span>
         <span>Conservative-first</span>
@@ -598,121 +631,167 @@ section{overflow:hidden}
   <div class="wrap reveal">
     <div style="max-width:60ch;margin-bottom:48px">
       <p class="kicker">How we decide</p>
-      <h2>Repair. Reconstruct. Replace.</h2>
+      <h2>Three stages of care</h2>
       <p class="lede">Three stages of care, in the order we prefer to consider them.</p>
     </div>
     <div class="steps">
       <div class="step" data-n="01"><div class="orb">01</div><span class="big">Repair</span><p>Whenever possible, we focus on <span class="key">saving and repairing your natural teeth</span> instead of removing them.</p></div>
-      <div class="step" data-n="02"><div class="orb">02</div><span class="big">Reconstruct</span><p>When a tooth has lost significant structure, we restore its <span class="key">strength, function and appearance</span> with appropriate restorative treatment.</p></div>
+      <div class="step" data-n="02"><div class="orb">02</div><span class="big">Restore</span><p>When a tooth has lost significant structure, we restore its <span class="key">strength, function and appearance</span> with appropriate restorative treatment.</p></div>
       <div class="step" data-n="03"><div class="orb">03</div><span class="big">Replace</span><p>When a tooth cannot be predictably saved, we provide <span class="key">carefully planned replacement</span> options to restore comfort, function and confidence.</p></div>
     </div>
   </div>
 </section>
 
 <section id="treatments">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><path id="tp" d="M50 8C62 0 82 2 90 18C97 33 90 52 85 68C80 88 78 112 68 112C58 112 58 88 50 88C42 88 42 112 32 112C22 112 20 88 15 68C10 52 3 33 10 18C18 2 38 0 50 8Z"/></defs></svg>
   <div class="wrap reveal">
-    <div style="max-width:62ch;margin-bottom:34px">
-      <p class="kicker">Treatments</p>
-      <h2>Comprehensive dental care</h2>
-      <p class="lede">A <span class="key">full-service dental clinic</span> — routine check-ups, root canals, gum care, restorations and cosmetic work, all under one roof.</p>
+    <div style="max-width:62ch;margin-bottom:30px">
+      <p class="kicker">Our dental services</p>
+      <h2>Everything your smile needs</h2>
+      <p class="lede">From a simple check-up to complete smile care, all under one roof. <span class="key">Tell us what is bothering you</span> and we will show you where to start.</p>
     </div>
-
-    <div class="tabs" role="tablist" aria-label="Treatment areas">
-      <button class="tab" role="tab" aria-selected="true" aria-controls="p1" id="t1">Preventive</button>
-      <button class="tab" role="tab" aria-selected="false" aria-controls="p2" id="t2">Root canal</button>
-      <button class="tab" role="tab" aria-selected="false" aria-controls="p3" id="t3">Gum care</button>
-      <button class="tab" role="tab" aria-selected="false" aria-controls="p4" id="t4">Orthodontics</button>
+    <div class="tabs svc-filter" role="group" aria-label="Filter services by what you need"><button type="button" class="svc-chip" data-f="all" aria-pressed="true">All services</button><button type="button" class="svc-chip" data-f="prevent" aria-pressed="false">Check-ups &amp; prevention</button><button type="button" class="svc-chip" data-f="repair" aria-pressed="false">Pain &amp; repair</button><button type="button" class="svc-chip" data-f="smile" aria-pressed="false">Smile &amp; looks</button><button type="button" class="svc-chip" data-f="missing" aria-pressed="false">Missing teeth</button><button type="button" class="svc-chip" data-f="straight" aria-pressed="false">Straighter teeth</button><button type="button" class="svc-chip" data-f="gums" aria-pressed="false">Gums</button><button type="button" class="svc-chip" data-f="kids" aria-pressed="false">Kids</button></div>
+    <p class="svc-count" id="svcCount" role="status" aria-live="polite">Showing all 15 services</p>
+    <div class="svc-grid" id="svcGrid">
+      <article class="svc" data-cat="prevent">
+        <figure style="background:#e9f3ee"><svg viewBox="0 0 320 200" role="img" aria-label="Illustration: Preventive Dental Care" preserveAspectRatio="xMidYMid slice"><circle cx="262" cy="46" r="74" fill="#fff" opacity=".5"/><circle cx="48" cy="170" r="40" fill="#fff" opacity=".35"/><use href="#tp" fill="#fff" stroke="#b4cfd3" stroke-width="3" transform="translate(105 38) scale(1.1)" /><path d="M236 40Q236 52 248 52Q236 52 236 64Q236 52 224 52Q236 52 236 40Z" fill="#c9862f"/><path d="M62 62Q62 70 70 70Q62 70 62 78Q62 70 54 70Q62 70 62 62Z" fill="#6cc2b8"/><path d="M88 24Q88 30 94 30Q88 30 88 36Q88 30 82 30Q88 30 88 24Z" fill="#c9862f"/><circle cx="238" cy="124" r="28" fill="#e3f4f5" stroke="#1c5379" stroke-width="5"/><path d="M222 112q10-10 22-4" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M219 146L190 186" stroke="#1c5379" stroke-width="7" stroke-linecap="round"/></svg></figure>
+        <div class="svc-body">
+          <span class="svc-tag">Check-ups &amp; cleaning</span>
+          <h3>Preventive Dental Care</h3>
+          <p>Regular check-ups and professional cleaning that catch problems early.</p>
+          <a class="svc-ask" href="#appointment" data-svc="Preventive Dental Care">Ask about this <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="svc" data-cat="repair">
+        <figure style="background:#e8f1f6"><svg viewBox="0 0 320 200" role="img" aria-label="Illustration: Fillings &amp; Restorative Dentistry" preserveAspectRatio="xMidYMid slice"><circle cx="262" cy="46" r="74" fill="#fff" opacity=".5"/><circle cx="48" cy="170" r="40" fill="#fff" opacity=".35"/><use href="#tp" fill="#fff" stroke="#b4cfd3" stroke-width="3" transform="translate(100 34) scale(1.15)" /><ellipse cx="158" cy="72" rx="19" ry="14" fill="#6cc2b8"/><path d="M148 72l7 6 12-13" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="244" cy="138" r="24" fill="#3c7c6e"/><path d="M233.92 139l6.720000000000001 7.199999999999999 14.399999999999999-16.799999999999997" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M60 150h40M60 168h26" stroke="#b4cfd3" stroke-width="8" stroke-linecap="round"/></svg></figure>
+        <div class="svc-body">
+          <span class="svc-tag">Repair damaged teeth</span>
+          <h3>Fillings &amp; Restorative Dentistry</h3>
+          <p>Fix cavities, chips and worn teeth with natural-looking, tooth-coloured materials.</p>
+          <a class="svc-ask" href="#appointment" data-svc="Fillings &amp; Restorative Dentistry">Ask about this <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="svc" data-cat="prevent kids">
+        <figure style="background:#f6efdc"><svg viewBox="0 0 320 200" role="img" aria-label="Illustration: Kids' Dental Care" preserveAspectRatio="xMidYMid slice"><circle cx="262" cy="46" r="74" fill="#fff" opacity=".5"/><circle cx="48" cy="170" r="40" fill="#fff" opacity=".35"/><g transform="translate(110 46) scale(.95)"><use href="#tp" fill="#fff" stroke="#b4cfd3" stroke-width="3"/><circle cx="36" cy="42" r="4.5" fill="#1c5379"/><circle cx="64" cy="42" r="4.5" fill="#1c5379"/><path d="M37 56Q50 70 63 56" fill="none" stroke="#1c5379" stroke-width="3.5" stroke-linecap="round"/><circle cx="27" cy="54" r="6" fill="#f6b3a5" opacity=".7"/><circle cx="73" cy="54" r="6" fill="#f6b3a5" opacity=".7"/></g><path d="M62 44Q62 56 74 56Q62 56 62 68Q62 56 50 56Q62 56 62 44Z" fill="#c9862f"/><path d="M262 111Q262 120 271 120Q262 120 262 129Q262 120 253 120Q262 120 262 111Z" fill="#6cc2b8"/><circle cx="252" cy="62" r="24" fill="#e8806a"/><path d="M252 86q-6 20 4 40" fill="none" stroke="#8aa3ad" stroke-width="2.5"/><path d="M243 52q4-8 12-8" stroke="#fff" stroke-width="3.5" fill="none" stroke-linecap="round" opacity=".8"/></svg></figure>
+        <div class="svc-body">
+          <span class="svc-tag">Gentle &amp; friendly</span>
+          <h3>Kids' Dental Care</h3>
+          <p>Patient, child-friendly care that helps little smiles grow up healthy.</p>
+          <a class="svc-ask" href="#appointment" data-svc="Kids' Dental Care">Ask about this <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="svc" data-cat="repair">
+        <figure style="background:#eaf0f6"><svg viewBox="0 0 320 200" role="img" aria-label="Illustration: Root Canal Treatment" preserveAspectRatio="xMidYMid slice"><circle cx="262" cy="46" r="74" fill="#fff" opacity=".5"/><circle cx="48" cy="170" r="40" fill="#fff" opacity=".35"/><use href="#tp" fill="#fff" stroke="#b4cfd3" stroke-width="3" transform="translate(98 26) scale(1.25)" /><path d="M146 62Q160 76 156 98Q154 122 162 150L154 150Q148 122 146 122Q144 122 138 150L130 150Q138 122 136 98Q132 76 146 62Z" fill="#f2a58f" transform="translate(-2 4)"/><path d="M250 96L284 108V138C284 160 268 174 250 182C232 174 216 160 216 138V108Z" fill="#3c7c6e"/><path d="M236 138l10 10 19-22" fill="none" stroke="#fff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/></svg></figure>
+        <div class="svc-body">
+          <span class="svc-tag">Save your natural tooth</span>
+          <h3>Root Canal Treatment</h3>
+          <p>Relieves tooth pain and saves a badly infected tooth, so it need not be removed.</p>
+          <a class="svc-ask" href="#appointment" data-svc="Root Canal Treatment">Ask about this <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="svc" data-cat="smile">
+        <figure style="background:#e9f3ee"><svg viewBox="0 0 320 200" role="img" aria-label="Illustration: Smile Makeovers" preserveAspectRatio="xMidYMid slice"><circle cx="262" cy="46" r="74" fill="#fff" opacity=".5"/><circle cx="48" cy="170" r="40" fill="#fff" opacity=".35"/><defs><clipPath id="sm5"><path d="M72 100Q160 138 248 100Q160 190 72 100Z"/></clipPath></defs><path d="M72 100Q160 138 248 100Q160 190 72 100Z" fill="#6b2d3a"/><g clip-path="url(#sm5)" fill="#fff"><rect x="96" y="108" width="19" height="30" rx="7"/><rect x="117" y="108" width="19" height="30" rx="7"/><rect x="138" y="108" width="19" height="30" rx="7"/><rect x="159" y="108" width="19" height="30" rx="7"/><rect x="180" y="108" width="19" height="30" rx="7"/><rect x="201" y="108" width="19" height="30" rx="7"/><rect x="222" y="108" width="19" height="30" rx="7"/></g><path d="M72 100Q160 138 248 100Q160 190 72 100Z" fill="none" stroke="#e8806a" stroke-width="9" stroke-linejoin="round"/><path d="M266 57Q266 70 279 70Q266 70 266 83Q266 70 253 70Q266 70 266 57Z" fill="#c9862f"/><path d="M46 78Q46 86 54 86Q46 86 46 94Q46 86 38 86Q46 86 46 78Z" fill="#6cc2b8"/><path d="M246 153Q246 160 253 160Q246 160 246 167Q246 160 239 160Q246 160 246 153Z" fill="#c9862f"/></svg></figure>
+        <div class="svc-body">
+          <span class="svc-tag">Planned around you</span>
+          <h3>Smile Makeovers</h3>
+          <p>A personalised plan that combines treatments to give you a smile you love.</p>
+          <a class="svc-ask" href="#appointment" data-svc="Smile Makeovers">Ask about this <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="svc" data-cat="smile">
+        <figure style="background:#e8f1f6"><svg viewBox="0 0 320 200" role="img" aria-label="Illustration: Veneers" preserveAspectRatio="xMidYMid slice"><circle cx="262" cy="46" r="74" fill="#fff" opacity=".5"/><circle cx="48" cy="170" r="40" fill="#fff" opacity=".35"/><use href="#tp" fill="#eadfc2" stroke="#b4cfd3" stroke-width="3" transform="translate(76 48) scale(1)" /><path d="M168 112h40" stroke="#c9862f" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 8"/><use href="#tp" fill="#fff" stroke="#3c7c6e" stroke-width="3.5" stroke-dasharray="7 6" transform="translate(190 34) scale(1.1)"/><path d="M300 30Q300 40 310 40Q300 40 300 50Q300 40 290 40Q300 40 300 30Z" fill="#c9862f"/><path d="M180 32Q180 40 188 40Q180 40 180 48Q180 40 172 40Q180 40 180 32Z" fill="#6cc2b8"/></svg></figure>
+        <div class="svc-body">
+          <span class="svc-tag">Smile enhancement</span>
+          <h3>Veneers</h3>
+          <p>Thin, custom shells bonded to the front of teeth to reshape, close gaps and brighten.</p>
+          <a class="svc-ask" href="#appointment" data-svc="Veneers">Ask about this <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="svc" data-cat="smile">
+        <figure style="background:#f6efdc"><svg viewBox="0 0 320 200" role="img" aria-label="Illustration: Teeth Whitening" preserveAspectRatio="xMidYMid slice"><circle cx="262" cy="46" r="74" fill="#fff" opacity=".5"/><circle cx="48" cy="170" r="40" fill="#fff" opacity=".35"/><rect x="52" y="36" width="74" height="26" rx="9" fill="#e2d2a4" stroke="#e1d6b6"/><rect x="52" y="70" width="74" height="26" rx="9" fill="#ecdfba" stroke="#e1d6b6"/><rect x="52" y="104" width="74" height="26" rx="9" fill="#f5ecd2" stroke="#e1d6b6"/><rect x="52" y="138" width="74" height="26" rx="9" fill="#ffffff" stroke="#e1d6b6"/><path d="M140 100h28" stroke="#3c7c6e" stroke-width="5" stroke-linecap="round"/><path d="M160 90l12 10-12 10" fill="none" stroke="#3c7c6e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><g stroke="#c9862f" stroke-width="4" stroke-linecap="round"><path d="M240 18v10M284 40l-8 7M296 90h-10M196 40l8 7M200 90h10"/></g><use href="#tp" fill="#fff" stroke="#b4cfd3" stroke-width="3" transform="translate(205 38) scale(1.05)" /><path d="M292 52Q292 62 302 62Q292 62 292 72Q292 62 282 62Q292 62 292 52Z" fill="#c9862f"/></svg></figure>
+        <div class="svc-body">
+          <span class="svc-tag">Brighter in a visit</span>
+          <h3>Teeth Whitening</h3>
+          <p>Safe, professional whitening to lift stains and brighten your shade.</p>
+          <a class="svc-ask" href="#appointment" data-svc="Teeth Whitening">Ask about this <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="svc" data-cat="missing">
+        <figure style="background:#eaf0f6"><svg viewBox="0 0 320 200" role="img" aria-label="Illustration: Dental Implants" preserveAspectRatio="xMidYMid slice"><circle cx="262" cy="46" r="74" fill="#fff" opacity=".5"/><circle cx="48" cy="170" r="40" fill="#fff" opacity=".35"/><rect x="40" y="118" width="240" height="90" rx="14" fill="#f2b8b0"/><rect x="40" y="152" width="240" height="60" fill="#ead9bd"/><rect x="146" y="100" width="28" height="82" rx="6" fill="#8aa3ad"/><path d="M144 112h32" stroke="#5f7e8a" stroke-width="4"/><path d="M144 125h32" stroke="#5f7e8a" stroke-width="4"/><path d="M144 138h32" stroke="#5f7e8a" stroke-width="4"/><path d="M144 151h32" stroke="#5f7e8a" stroke-width="4"/><path d="M144 164h32" stroke="#5f7e8a" stroke-width="4"/><path d="M144 177h32" stroke="#5f7e8a" stroke-width="4"/><rect x="152" y="84" width="16" height="22" rx="3" fill="#6f8c98"/><path d="M112 40Q112 20 134 17Q160 13 186 17Q208 20 208 40Q208 66 194 86L126 86Q112 66 112 40Z" fill="#fff" stroke="#b4cfd3" stroke-width="3"/><path d="M236 34Q236 44 246 44Q236 44 236 54Q236 44 226 44Q236 44 236 34Z" fill="#c9862f"/></svg></figure>
+        <div class="svc-body">
+          <span class="svc-tag">A fixed, lasting replacement</span>
+          <h3>Dental Implants</h3>
+          <p>A strong, natural-feeling replacement for a missing tooth, fixed into the jaw.</p>
+          <a class="svc-ask" href="#appointment" data-svc="Dental Implants">Ask about this <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="svc" data-cat="repair">
+        <figure style="background:#e9f3ee"><svg viewBox="0 0 320 200" role="img" aria-label="Illustration: Tooth Removal" preserveAspectRatio="xMidYMid slice"><circle cx="262" cy="46" r="74" fill="#fff" opacity=".5"/><circle cx="48" cy="170" r="40" fill="#fff" opacity=".35"/><rect x="40" y="140" width="240" height="70" rx="14" fill="#f2b8b0"/><ellipse cx="160" cy="142" rx="36" ry="9" fill="#d4706f"/><use href="#tp" fill="#fff" stroke="#b4cfd3" stroke-width="3" transform="translate(112 6) scale(0.95)" /><path d="M244 130V56" stroke="#3c7c6e" stroke-width="6" stroke-linecap="round"/><path d="M228 72l16-18 16 18" fill="none" stroke="#3c7c6e" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M70 51Q70 60 79 60Q70 60 70 69Q70 60 61 60Q70 60 70 51Z" fill="#6cc2b8"/></svg></figure>
+        <div class="svc-body">
+          <span class="svc-tag">Simple &amp; surgical extractions</span>
+          <h3>Tooth Removal</h3>
+          <p>Gentle removal when a tooth truly cannot be saved: simple or surgical.</p>
+          <a class="svc-ask" href="#appointment" data-svc="Tooth Removal">Ask about this <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="svc" data-cat="straight">
+        <figure style="background:#e8f1f6"><svg viewBox="0 0 320 200" role="img" aria-label="Illustration: Braces &amp; Invisible Aligners" preserveAspectRatio="xMidYMid slice"><circle cx="262" cy="46" r="74" fill="#fff" opacity=".5"/><circle cx="48" cy="170" r="40" fill="#fff" opacity=".35"/><rect x="42" y="30" width="40" height="58" rx="15" fill="#fff" stroke="#b4cfd3" stroke-width="3"/><rect x="53" y="50" width="18" height="14" rx="3" fill="#3c7c6e"/><rect x="90" y="30" width="40" height="58" rx="15" fill="#fff" stroke="#b4cfd3" stroke-width="3"/><rect x="101" y="50" width="18" height="14" rx="3" fill="#3c7c6e"/><rect x="138" y="30" width="40" height="58" rx="15" fill="#fff" stroke="#b4cfd3" stroke-width="3"/><rect x="149" y="50" width="18" height="14" rx="3" fill="#3c7c6e"/><rect x="186" y="30" width="40" height="58" rx="15" fill="#fff" stroke="#b4cfd3" stroke-width="3"/><rect x="197" y="50" width="18" height="14" rx="3" fill="#3c7c6e"/><rect x="234" y="30" width="40" height="58" rx="15" fill="#fff" stroke="#b4cfd3" stroke-width="3"/><rect x="245" y="50" width="18" height="14" rx="3" fill="#3c7c6e"/><rect x="282" y="30" width="40" height="58" rx="15" fill="#fff" stroke="#b4cfd3" stroke-width="3"/><rect x="293" y="50" width="18" height="14" rx="3" fill="#3c7c6e"/><path d="M48 57H318" stroke="#7f9aa4" stroke-width="3"/><rect x="34" y="118" width="256" height="68" rx="26" fill="#d9eef0" opacity=".7" stroke="#3c7c6e" stroke-width="3" stroke-dasharray="7 6"/><rect x="46" y="130" width="34" height="44" rx="13" fill="#fff" stroke="#b4cfd3" stroke-width="2.5"/><rect x="86" y="130" width="34" height="44" rx="13" fill="#fff" stroke="#b4cfd3" stroke-width="2.5"/><rect x="126" y="130" width="34" height="44" rx="13" fill="#fff" stroke="#b4cfd3" stroke-width="2.5"/><rect x="166" y="130" width="34" height="44" rx="13" fill="#fff" stroke="#b4cfd3" stroke-width="2.5"/><rect x="206" y="130" width="34" height="44" rx="13" fill="#fff" stroke="#b4cfd3" stroke-width="2.5"/><rect x="246" y="130" width="34" height="44" rx="13" fill="#fff" stroke="#b4cfd3" stroke-width="2.5"/></svg></figure>
+        <div class="svc-body">
+          <span class="svc-tag">Straighter teeth</span>
+          <h3>Braces &amp; Invisible Aligners</h3>
+          <p>Straighten crooked or crowded teeth with braces or near-invisible aligners.</p>
+          <a class="svc-ask" href="#appointment" data-svc="Braces &amp; Invisible Aligners">Ask about this <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="svc" data-cat="repair">
+        <figure style="background:#f6efdc"><svg viewBox="0 0 320 200" role="img" aria-label="Illustration: Minor Oral Surgeries" preserveAspectRatio="xMidYMid slice"><circle cx="262" cy="46" r="74" fill="#fff" opacity=".5"/><circle cx="48" cy="170" r="40" fill="#fff" opacity=".35"/><path d="M0 92Q80 66 160 90Q240 114 320 80V200H0Z" fill="#f2b8b0"/><g transform="translate(120 100) rotate(52 50 56)"><use href="#tp" fill="#fff" stroke="#b4cfd3" stroke-width="3" opacity=".95"/></g><path d="M150 70Q170 70 190 84" stroke="#d4706f" stroke-width="5" fill="none" stroke-linecap="round" stroke-dasharray="3 9"/><circle cx="250" cy="52" r="26" fill="#3c7c6e"/><path d="M250 38v28M236 52h28" stroke="#fff" stroke-width="6" stroke-linecap="round"/></svg></figure>
+        <div class="svc-body">
+          <span class="svc-tag">Done with care</span>
+          <h3>Minor Oral Surgeries</h3>
+          <p>Wisdom teeth, small cysts and other minor procedures, planned and explained.</p>
+          <a class="svc-ask" href="#appointment" data-svc="Minor Oral Surgeries">Ask about this <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="svc" data-cat="gums">
+        <figure style="background:#eaf0f6"><svg viewBox="0 0 320 200" role="img" aria-label="Illustration: Gum Treatment &amp; Gum Surgeries" preserveAspectRatio="xMidYMid slice"><circle cx="262" cy="46" r="74" fill="#fff" opacity=".5"/><circle cx="48" cy="170" r="40" fill="#fff" opacity=".35"/><use href="#tp" fill="#fff" stroke="#b4cfd3" stroke-width="3" transform="translate(46 26) scale(0.88)" /><use href="#tp" fill="#fff" stroke="#b4cfd3" stroke-width="3" transform="translate(124 26) scale(0.88)" /><use href="#tp" fill="#fff" stroke="#b4cfd3" stroke-width="3" transform="translate(202 26) scale(0.88)" /><path d="M20 140Q50 120 80 134Q110 118 140 134Q170 118 200 134Q230 118 260 134Q290 120 306 140V210H20Z" fill="#f2b8b0"/><path d="M20 140Q50 120 80 134Q110 118 140 134Q170 118 200 134Q230 118 260 134Q290 120 306 140" fill="none" stroke="#e48d88" stroke-width="4"/><circle cx="270" cy="52" r="20" fill="#3c7c6e"/><path d="M261.6 53l5.6000000000000005 6.0 12.0-14.0" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></figure>
+        <div class="svc-body">
+          <span class="svc-tag">Healthy gums, healthy teeth</span>
+          <h3>Gum Treatment &amp; Gum Surgeries</h3>
+          <p>Treats bleeding, swollen or receding gums to protect the teeth they hold.</p>
+          <a class="svc-ask" href="#appointment" data-svc="Gum Treatment &amp; Gum Surgeries">Ask about this <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="svc" data-cat="gums">
+        <figure style="background:#e9f3ee"><svg viewBox="0 0 320 200" role="img" aria-label="Illustration: Laser Dentistry" preserveAspectRatio="xMidYMid slice"><circle cx="262" cy="46" r="74" fill="#fff" opacity=".5"/><circle cx="48" cy="170" r="40" fill="#fff" opacity=".35"/><use href="#tp" fill="#fff" stroke="#b4cfd3" stroke-width="3" transform="translate(70 40) scale(1.05)" /><g transform="rotate(-24 250 40)"><rect x="236" y="12" width="84" height="24" rx="12" fill="#1c5379"/><rect x="212" y="19" width="34" height="10" rx="5" fill="#8aa3ad"/></g><path d="M222 52L150 92" stroke="#c9862f" stroke-width="6" stroke-linecap="round"/><path d="M222 52L150 92" stroke="#ffe3a8" stroke-width="2.5" stroke-linecap="round"/><g stroke="#c9862f" stroke-width="3.5" stroke-linecap="round"><path d="M146 92l-18-4M148 96l-12 14M152 98l2 18M142 86l-14-12"/></g><path d="M150 83Q150 92 159 92Q150 92 150 101Q150 92 141 92Q150 92 150 83Z" fill="#fff"/></svg></figure>
+        <div class="svc-body">
+          <span class="svc-tag">Precise &amp; gentle</span>
+          <h3>Laser Dentistry</h3>
+          <p>Modern laser treatment for gums and soft tissue, with precision and comfort.</p>
+          <a class="svc-ask" href="#appointment" data-svc="Laser Dentistry">Ask about this <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="svc" data-cat="missing">
+        <figure style="background:#e8f1f6"><svg viewBox="0 0 320 200" role="img" aria-label="Illustration: Missing Teeth Replacement" preserveAspectRatio="xMidYMid slice"><circle cx="262" cy="46" r="74" fill="#fff" opacity=".5"/><circle cx="48" cy="170" r="40" fill="#fff" opacity=".35"/><use href="#tp" fill="#fff" stroke="#b4cfd3" stroke-width="3" transform="translate(22 66) scale(0.55)" /><use href="#tp" fill="#fff" stroke="#b4cfd3" stroke-width="3" transform="translate(77 66) scale(0.55)" /><use href="#tp" fill="none" stroke="#c9862f" stroke-width="4" stroke-dasharray="6 6" transform="translate(132 66) scale(.55)"/><path d="M159 92v22M148 103h22" stroke="#c9862f" stroke-width="4.5" stroke-linecap="round"/><use href="#tp" fill="#fff" stroke="#b4cfd3" stroke-width="3" transform="translate(187 66) scale(0.55)" /><use href="#tp" fill="#fff" stroke="#b4cfd3" stroke-width="3" transform="translate(242 66) scale(0.55)" /><path d="M40 56Q160 12 280 56" fill="none" stroke="#3c7c6e" stroke-width="5" stroke-linecap="round"/><circle cx="40" cy="58" r="6" fill="#3c7c6e"/><circle cx="280" cy="58" r="6" fill="#3c7c6e"/><rect x="40" y="148" width="240" height="14" rx="7" fill="#f2b8b0"/></svg></figure>
+        <div class="svc-body">
+          <span class="svc-tag">Bridges, dentures &amp; implants</span>
+          <h3>Missing Teeth Replacement</h3>
+          <p>Bridges, dentures or implants to bring back your bite, speech and smile.</p>
+          <a class="svc-ask" href="#appointment" data-svc="Missing Teeth Replacement">Ask about this <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="svc" data-cat="prevent">
+        <figure style="background:#f6efdc"><svg viewBox="0 0 320 200" role="img" aria-label="Illustration: Oral Health Maintenance &amp; Home Care" preserveAspectRatio="xMidYMid slice"><circle cx="262" cy="46" r="74" fill="#fff" opacity=".5"/><circle cx="48" cy="170" r="40" fill="#fff" opacity=".35"/><g transform="rotate(-28 170 100)"><rect x="70" y="92" width="150" height="16" rx="8" fill="#6cc2b8"/><rect x="212" y="84" width="58" height="32" rx="9" fill="#1c5379"/><rect x="218" y="66" width="6" height="20" rx="3" fill="#fff" stroke="#b4cfd3" stroke-width="2"/><rect x="228" y="66" width="6" height="20" rx="3" fill="#fff" stroke="#b4cfd3" stroke-width="2"/><rect x="238" y="66" width="6" height="20" rx="3" fill="#fff" stroke="#b4cfd3" stroke-width="2"/><rect x="248" y="66" width="6" height="20" rx="3" fill="#fff" stroke="#b4cfd3" stroke-width="2"/><rect x="258" y="66" width="6" height="20" rx="3" fill="#fff" stroke="#b4cfd3" stroke-width="2"/></g><path d="M48 156l66-14 6 22-66 14z" fill="#fff" stroke="#1c5379" stroke-width="3.5" stroke-linejoin="round"/><rect x="108" y="140" width="20" height="30" rx="5" fill="#3c7c6e" transform="rotate(-12 118 155)"/><circle cx="252" cy="148" r="26" fill="#fff" stroke="#c9862f" stroke-width="3.5"/><circle cx="252" cy="148" r="12" fill="none" stroke="#c9862f" stroke-width="3"/><path d="M270 164q18 12 6 26" fill="none" stroke="#c9862f" stroke-width="3" stroke-linecap="round"/><path d="M60 51Q60 60 69 60Q60 60 60 69Q60 60 51 60Q60 60 60 51Z" fill="#c9862f"/></svg></figure>
+        <div class="svc-body">
+          <span class="svc-tag">Keep your results</span>
+          <h3>Oral Health Maintenance &amp; Home Care</h3>
+          <p>Simple daily routines and advice to keep your teeth and gums healthy.</p>
+          <a class="svc-ask" href="#appointment" data-svc="Oral Health Maintenance &amp; Home Care">Ask about this <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
     </div>
-
-    <div class="panel on" id="p1" role="tabpanel" aria-labelledby="t1">
-      <div>
-        <h3>Prevention is better than extensive treatment</h3>
-        <p>Regular check-ups, professional cleaning and early detection can <span class="key">prevent small problems from becoming complex dental problems</span>.</p>
-        <ul class="checks">
-          <li><svg class="tick" width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8.5l4 4 8-9"/></svg>Regular dental examinations</li>
-          <li><svg class="tick" width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8.5l4 4 8-9"/></svg>Professional cleaning</li>
-          <li><svg class="tick" width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8.5l4 4 8-9"/></svg>Early detection of decay and gum problems</li>
-          <li><svg class="tick" width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8.5l4 4 8-9"/></svg>Oral hygiene guidance and long-term maintenance</li>
-        </ul>
-      </div>
-      <figure class="art">
-        <svg viewBox="0 0 560 420" role="img" aria-label="Illustration of a routine dental check-up">
-          <rect width="560" height="420" fill="#eaf4f7"/><circle cx="430" cy="110" r="110" fill="#d7ebee"/>
-          <g transform="translate(180 70) scale(1.5)"><path d="M40 6c14-9 33-9 42 2 10 12 7 30 3 46-4 15-9 34-14 44-5 10-14 8-17-2-3-10-4-20-15-20s-12 10-15 20c-3 10-12 12-17 2-5-10-10-29-14-44-4-16-7-34 3-46 9-11 30-11 44-2z" fill="#fff"/></g>
-          <circle cx="110" cy="330" r="26" fill="#9fd4cc"/><rect x="160" y="318" width="150" height="12" rx="6" fill="#c2dee2"/><rect x="160" y="344" width="96" height="12" rx="6" fill="#c2dee2"/>
-        </svg>
-      </figure>
-    </div>
-
-    <div class="panel" id="p2" role="tabpanel" aria-labelledby="t2" hidden>
-      <div>
-        <h3>Save your natural tooth</h3>
-        <p>When a tooth is infected or badly damaged, <span class="key">root canal treatment</span> can often help save the natural tooth and restore its function. Treatment is <span class="key">designed to make your visit as comfortable as possible</span>.</p>
-        <ul class="checks">
-          <li><svg class="tick" width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8.5l4 4 8-9"/></svg>Detailed diagnosis before treatment begins</li>
-          <li><svg class="tick" width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8.5l4 4 8-9"/></svg>Conservative approach to tooth structure</li>
-          <li><svg class="tick" width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8.5l4 4 8-9"/></svg>Proper restoration after treatment</li>
-          <li><svg class="tick" width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8.5l4 4 8-9"/></svg>Follow-up care</li>
-        </ul>
-      </div>
-      <figure class="art">
-        <svg viewBox="0 0 560 420" role="img" aria-label="Illustration of root canal treatment saving a natural tooth">
-          <rect width="560" height="420" fill="#eef6f7"/><circle cx="150" cy="120" r="100" fill="#dbeceb"/>
-          <g transform="translate(200 60) scale(1.7)"><path d="M40 6c14-9 33-9 42 2 10 12 7 30 3 46-4 15-9 34-14 44-5 10-14 8-17-2-3-10-4-20-15-20s-12 10-15 20c-3 10-12 12-17 2-5-10-10-29-14-44-4-16-7-34 3-46 9-11 30-11 44-2z" fill="#fff"/><path d="M42 34c4 20 4 40 4 58M78 34c-4 20-4 40-4 58" stroke="#7fc7bd" stroke-width="4" fill="none" stroke-linecap="round"/></g>
-        </svg>
-      </figure>
-    </div>
-
-    <div class="panel" id="p3" role="tabpanel" aria-labelledby="t3" hidden>
-      <div>
-        <h3>Healthy gums, healthy smile</h3>
-        <p>Gums hold everything in place. When they bleed, swell or recede, it shows up long before a tooth starts to hurt — which is exactly why <span class="key">checking early</span> matters.</p>
-        <ul class="checks">
-          <li><svg class="tick" width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8.5l4 4 8-9"/></svg>Gum evaluation at every visit</li>
-          <li><svg class="tick" width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8.5l4 4 8-9"/></svg>Periodontal care and gum disease management</li>
-          <li><svg class="tick" width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8.5l4 4 8-9"/></svg><span class="key">Gum surgery when clinically required</span></li>
-          <li><svg class="tick" width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8.5l4 4 8-9"/></svg>Maintenance and follow-up</li>
-        </ul>
-      </div>
-      <figure class="art">
-        <svg viewBox="0 0 560 420" role="img" aria-label="Illustration of healthy gums and teeth">
-          <rect width="560" height="420" fill="#edf6f4"/>
-          <path d="M60 250c60-70 380-70 440 0-20 90-420 90-440 0z" fill="#f0b8b8" opacity=".55"/>
-          <g fill="#fff"><rect x="120" y="190" width="52" height="80" rx="20"/><rect x="186" y="180" width="58" height="92" rx="22"/><rect x="258" y="176" width="62" height="96" rx="24"/><rect x="334" y="180" width="58" height="92" rx="22"/><rect x="406" y="190" width="52" height="80" rx="20"/></g>
-        </svg>
-      </figure>
-    </div>
-
-    <div class="panel" id="p4" role="tabpanel" aria-labelledby="t4" hidden>
-      <div>
-        <h3>Early attention can make a difference</h3>
-        <p>While a child is still growing, jaws and teeth are still settling into place. Looking early sometimes means a simpler approach later — though <span class="key">not every child needs treatment</span>.</p>
-        <ul class="checks">
-          <li><svg class="tick" width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8.5l4 4 8-9"/></svg>Early assessment of growth and development</li>
-          <li><svg class="tick" width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8.5l4 4 8-9"/></svg>Bite problems and tooth alignment</li>
-          <li><svg class="tick" width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8.5l4 4 8-9"/></svg>Timely intervention — acting when it helps, waiting when waiting is better</li>
-          <li><svg class="tick" width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8.5l4 4 8-9"/></svg>Personalized orthodontic planning</li>
-        </ul>
-      </div>
-      <figure class="art">
-        <svg viewBox="0 0 560 420" role="img" aria-label="Illustration of tooth alignment">
-          <rect width="560" height="420" fill="#eef4f9"/>
-          <path d="M90 210h380" stroke="#9dc6dd" stroke-width="6" stroke-linecap="round"/>
-          <g fill="#fff"><rect x="110" y="150" width="54" height="76" rx="20" transform="rotate(-9 137 188)"/><rect x="190" y="158" width="54" height="76" rx="20" transform="rotate(5 217 196)"/><rect x="270" y="148" width="54" height="76" rx="20"/><rect x="350" y="158" width="54" height="76" rx="20" transform="rotate(-6 377 196)"/></g>
-          <g fill="#c9e3ef"><rect x="110" y="266" width="54" height="70" rx="20"/><rect x="190" y="266" width="54" height="70" rx="20"/><rect x="270" y="266" width="54" height="70" rx="20"/><rect x="350" y="266" width="54" height="70" rx="20"/></g>
-        </svg>
-      </figure>
-    </div>
-
-    <div class="cards">
-      <div class="mini"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21c-2 0-2-6-4-6s-3-3-3-7 4-5 7-3.5C15 3 19 4 19 8s-1 7-3 7-2 6-4 6z"/></svg></div><h4>Preventive dentistry</h4><p>Check-ups, cleaning and <span class="key">early detection</span>.</p></div>
-      <div class="mini"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M7 12h10"/></svg></div><h4>Conservative dentistry</h4><p>The <span class="key">least removal of healthy tooth</span> the case allows.</p></div>
-      <div class="mini"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 14l8-9 8 9-8 5z"/></svg></div><h4>Restorative dentistry</h4><p>Fillings, crowns and rebuilt teeth that chew comfortably.</p></div>
-      <div class="mini"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3c4 0 6 2 6 6s-2 12-6 12-6-8-6-12 2-6 6-6z"/><path d="M12 8v9"/></svg></div><h4>Root canal treatment</h4><p><span class="key">Save an infected tooth</span> rather than remove it.</p></div>
-      <div class="mini"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 12c3-6 15-6 18 0-3 6-15 6-18 0z"/><circle cx="12" cy="12" r="2.5"/></svg></div><h4>Gum &amp; periodontal</h4><p>Bleeding, swollen or receding gums treated properly.</p></div>
-      <div class="mini"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 9h16M6 9c0 6 3 9 6 9s6-3 6-9"/></svg></div><h4>Cosmetic dentistry</h4><p><span class="key">Tooth-coloured restorations</span> that look like your own.</p></div>
-      <div class="mini"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 8h14M5 8c1 7 4 10 7 10s6-3 7-10"/><path d="M9 8V5m6 3V5"/></svg></div><h4>Smile design</h4><p>Planned around your <span class="key">face and natural appearance</span>.</p></div>
-      <div class="mini"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 7h16M4 12h16M4 17h16"/></svg></div><h4>Interventional orthodontics</h4><p><span class="key">Timely steps</span> while a child is still growing.</p></div>
+    <div class="svc-help">
+      <div><h3>Not sure which service you need?</h3><p>Book a consultation. We will examine, explain your options in plain words and recommend only what is necessary.</p></div>
+      <a class="btn btn-primary" href="#appointment">Book a consultation</a>
     </div>
   </div>
 </section>
@@ -1002,6 +1081,30 @@ document.getElementById('apptForm').addEventListener('submit', function(e){
   status.textContent = 'Opening WhatsApp with your details. The clinic will confirm your time.';
   window.open('https://wa.me/[WHATSAPP NUMBER]?text=' + encodeURIComponent(lines), '_blank');
 });
+
+/* services filter + prefill */
+(function(){
+  var chips=document.querySelectorAll('.svc-chip'), cards=document.querySelectorAll('.svc'), count=document.getElementById('svcCount');
+  chips.forEach(function(c){
+    c.addEventListener('click',function(){
+      chips.forEach(function(x){x.setAttribute('aria-pressed','false');});
+      c.setAttribute('aria-pressed','true');
+      var f=c.getAttribute('data-f'), n=0;
+      cards.forEach(function(card){
+        var show = f==='all' || (' '+card.getAttribute('data-cat')+' ').indexOf(' '+f+' ')>-1;
+        card.hidden=!show;
+        if(show){n++; card.classList.remove('pop'); void card.offsetWidth; card.classList.add('pop');}
+      });
+      count.textContent = f==='all' ? 'Showing all '+n+' services' : 'Showing '+n+' of '+cards.length+' services for: '+c.textContent;
+    });
+  });
+  document.querySelectorAll('.svc-ask').forEach(function(a){
+    a.addEventListener('click',function(){
+      var m=document.getElementById('msg');
+      if(m){ m.value="I would like to know more about: "+a.getAttribute('data-svc').replace(/&amp;/g,'&')+"."; }
+    });
+  });
+})();
 </script>
 </body>
 </html>
