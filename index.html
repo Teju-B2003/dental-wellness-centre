@@ -505,29 +505,40 @@ section{overflow:hidden}
   .svc-help{flex-direction:column;align-items:flex-start;padding:24px}
 }
 @media (prefers-reduced-motion:reduce){.svc,.svc figure svg,.svc figure img{transition:none}}
-.kicker.kicker-lg{font-size:1.3rem;font-weight:600;letter-spacing:0;text-transform:none;color:var(--teal-deep);gap:12px}.kicker.kicker-lg::before{width:36px}@media(max-width:600px){.kicker.kicker-lg{font-size:1.15rem}}.hub{position:relative;max-width:1100px;height:760px;margin:0 auto}
+.kicker.kicker-lg{font-size:1.3rem;font-weight:600;letter-spacing:0;text-transform:none;color:var(--teal-deep);gap:12px}.kicker.kicker-lg::before{width:36px}@media(max-width:600px){.kicker.kicker-lg{font-size:1.15rem}}.hub{position:relative;max-width:1100px;height:860px;margin:0 auto}
 .hub-lines{position:absolute;inset:0;width:100%;height:100%;z-index:0;overflow:visible}
-.hub-lines line{stroke:var(--teal-lt);stroke-width:2;stroke-dasharray:3 9;stroke-linecap:round;vector-effect:non-scaling-stroke;animation:hubflow 1.6s linear infinite;transition:stroke .2s,stroke-width .2s}
+.hub-lines line{stroke:var(--c);stroke-width:3;stroke-dasharray:2 10;stroke-linecap:round;opacity:.75;vector-effect:non-scaling-stroke;animation:hubflow 1.4s linear infinite;transition:stroke-width .2s,opacity .2s}
 @keyframes hubflow{to{stroke-dashoffset:-24}}
-.hub-core{position:absolute;left:50%;top:42%;width:236px;height:236px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle at 30% 22%,#2f7a68,#132a2a 75%);color:#fff;display:grid;place-content:center;text-align:center;padding:26px;z-index:2;box-shadow:0 30px 60px -28px rgba(19,42,42,.75),0 0 0 14px rgba(60,124,110,.13),0 0 0 32px rgba(60,124,110,.07)}
+@keyframes hubspin{to{transform:rotate(360deg)}}
+@keyframes hubfloat{0%,100%{translate:0 0}50%{translate:0 -8px}}
+@keyframes hubpulse{0%,100%{box-shadow:0 30px 60px -28px rgba(19,42,42,.75),0 0 0 12px rgba(60,124,110,.16),0 0 0 30px rgba(60,124,110,.08)}50%{box-shadow:0 30px 60px -28px rgba(19,42,42,.75),0 0 0 20px rgba(60,124,110,.12),0 0 0 44px rgba(60,124,110,.05)}}
+.hub-core{position:absolute;left:50%;top:41%;width:250px;height:250px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle at 30% 22%,#34866f,#132a2a 78%);color:#fff;display:grid;place-content:center;text-align:center;padding:28px;z-index:2;border:5px solid #fff;animation:hubpulse 4s ease-in-out infinite}
+.hub-core::before{content:"";position:absolute;inset:-58px;border-radius:50%;border:2px dashed var(--teal);opacity:.55;animation:hubspin 40s linear infinite;pointer-events:none}
 .hub-core small{display:block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#bfe3d8;font-weight:600;margin-bottom:10px}
-.hub-core h2{color:#fff;font-size:1.75rem;line-height:1.15;margin:0}
-.sat{position:absolute;left:var(--x);top:var(--y);width:224px;height:224px;margin:-112px 0 0 -112px;border-radius:50%;background:#fff;border:1px solid var(--edge);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px 28px;z-index:1;box-shadow:0 22px 46px -30px rgba(19,42,42,.6);opacity:0;transform:scale(.78);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.3,1.2),border-color .2s,box-shadow .2s}
-.reveal.in .sat{opacity:1;transform:none;transition-delay:calc(var(--d)*.12s)}
-.reveal.in .sat:hover{transform:scale(1.06);border-color:var(--teal);box-shadow:0 30px 56px -28px rgba(19,42,42,.75);transition-delay:0s}
-.sat .ic{width:46px;height:46px;border-radius:50%;background:var(--wash);color:var(--teal-deep);display:grid;place-items:center;margin-bottom:10px;flex:none}
-.sat h3{font-size:1.1rem;line-height:1.2;margin:0 0 6px}
-.sat p{font-size:.84rem;line-height:1.45;margin:0}
-.hub-note{text-align:center;font-family:Fraunces,Georgia,serif;font-style:italic;font-size:1.25rem;color:var(--teal-deep);margin:44px auto 0;max-width:none}
-.hub:has(.sat[data-i="1"]:hover) .hub-lines line[data-i="1"]{stroke:var(--teal);stroke-width:3}.hub:has(.sat[data-i="2"]:hover) .hub-lines line[data-i="2"]{stroke:var(--teal);stroke-width:3}.hub:has(.sat[data-i="3"]:hover) .hub-lines line[data-i="3"]{stroke:var(--teal);stroke-width:3}.hub:has(.sat[data-i="4"]:hover) .hub-lines line[data-i="4"]{stroke:var(--teal);stroke-width:3}.hub:has(.sat[data-i="5"]:hover) .hub-lines line[data-i="5"]{stroke:var(--teal);stroke-width:3}
+.hub-core h2{color:#fff;font-size:1.8rem;line-height:1.15;margin:0}
+.sat{position:absolute;left:var(--x);top:var(--y);width:244px;height:244px;margin:-122px 0 0 -122px;border-radius:50%;background:linear-gradient(180deg,#fff,color-mix(in srgb,var(--c) 7%,#fff));border:4px solid var(--c);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:26px 30px;z-index:1;box-shadow:0 0 0 9px color-mix(in srgb,var(--c) 14%,transparent),0 26px 46px -26px rgba(19,42,42,.55);opacity:0;scale:.78;transition:opacity .6s ease,scale .6s cubic-bezier(.2,.8,.3,1.2),box-shadow .25s}
+.sat::before{content:"";position:absolute;inset:-22px;border-radius:50%;border:1.5px dashed var(--c);opacity:.5;animation:hubspin 30s linear infinite;pointer-events:none}
+.reveal.in .sat{opacity:1;scale:1;transition-delay:calc(var(--d)*.12s);animation:hubfloat 6s ease-in-out infinite;animation-delay:calc(var(--d)*-1.1s)}
+.reveal.in .sat:hover{scale:1.07;transition-delay:0s;animation-play-state:paused;box-shadow:0 0 0 14px color-mix(in srgb,var(--c) 22%,transparent),0 34px 56px -26px rgba(19,42,42,.7)}
+.sat .num{position:absolute;top:10px;right:26px;min-width:36px;height:36px;padding:0 6px;border-radius:999px;background:var(--c);color:#fff;font:600 .78rem/36px Inter,sans-serif;letter-spacing:.04em;border:3px solid #fff;box-shadow:0 6px 14px -6px rgba(19,42,42,.6);text-align:center}
+.sat .ic{width:52px;height:52px;border-radius:50%;background:var(--c);color:#fff;display:grid;place-items:center;margin-bottom:10px;flex:none;box-shadow:0 10px 18px -10px var(--c)}
+.sat h3{font-size:1.1rem;line-height:1.2;margin:0 0 8px;position:relative;padding-bottom:9px}
+.sat h3::after{content:"";position:absolute;left:50%;bottom:0;width:30px;height:3px;margin-left:-15px;border-radius:3px;background:var(--c)}
+.sat p{font-size:.83rem;line-height:1.45;margin:0;text-wrap:balance}
+.hub-note{text-align:center;font-family:Fraunces,Georgia,serif;font-style:italic;font-size:1.25rem;color:var(--teal-deep);margin:30px auto 0;max-width:none}
+.hub:has(.sat[data-i="1"]:hover) .hub-lines line[data-i="1"]{stroke-width:4;stroke-dasharray:none;opacity:1}.hub:has(.sat[data-i="2"]:hover) .hub-lines line[data-i="2"]{stroke-width:4;stroke-dasharray:none;opacity:1}.hub:has(.sat[data-i="3"]:hover) .hub-lines line[data-i="3"]{stroke-width:4;stroke-dasharray:none;opacity:1}.hub:has(.sat[data-i="4"]:hover) .hub-lines line[data-i="4"]{stroke-width:4;stroke-dasharray:none;opacity:1}.hub:has(.sat[data-i="5"]:hover) .hub-lines line[data-i="5"]{stroke-width:4;stroke-dasharray:none;opacity:1}
 @media (max-width:1000px){
-  .hub{height:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .hub{height:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
   .hub-lines{display:none}
-  .hub-core{position:static;transform:none;grid-column:1/-1;justify-self:center;margin:18px 0 26px;width:210px;height:210px}
-  .sat{position:static;margin:0;width:auto;height:auto;border-radius:26px;flex-direction:row;align-items:flex-start;text-align:left;gap:16px;padding:22px}
+  .hub-core{position:relative;left:auto;top:auto;transform:none;grid-column:1/-1;justify-self:center;margin:60px 0 60px;width:220px;height:220px}
+  .hub-core::before{inset:-40px}
+  .sat{position:static;margin:0;width:auto;height:auto;border-radius:22px;border:1px solid var(--edge);border-left:7px solid var(--c);flex-direction:row;align-items:flex-start;justify-content:flex-start;text-align:left;gap:16px;padding:22px 48px 22px 18px;box-shadow:0 18px 34px -26px rgba(19,42,42,.55);background:#fff}
+  .sat::before{display:none}
   .sat .ic{margin:0}
-  .sat{justify-content:flex-start}
+  .sat h3{padding-bottom:0}.sat h3::after{display:none}
+  .sat .num{top:12px;right:14px;min-width:30px;height:30px;line-height:30px;font-size:.7rem}
   .sat:last-of-type{grid-column:1/-1}
+  .reveal.in .sat{animation:none}
 }
 @media (max-width:640px){.hub{grid-template-columns:1fr}}
 header{background:#fff!important;backdrop-filter:none!important}summary{min-height:44px;align-items:center}.dotnav a::before{content:"";position:absolute;inset:-9px}</style>
@@ -880,13 +891,13 @@ header{background:#fff!important;backdrop-filter:none!important}summary{min-heig
 <section id="why" class="sand">
   <div class="wrap reveal">
     <div class="hub">
-      <svg class="hub-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><line data-i="1" x1="50" y1="42" x2="21" y2="17"/><line data-i="2" x1="50" y1="42" x2="79" y2="17"/><line data-i="3" x1="50" y1="42" x2="13" y2="60"/><line data-i="4" x1="50" y1="42" x2="87" y2="60"/><line data-i="5" x1="50" y1="42" x2="50" y2="88"/></svg>
+      <svg class="hub-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><line data-i="1" style="--c:#3c7c6e" x1="50" y1="41" x2="21" y2="16"/><line data-i="2" style="--c:#2f6f9c" x1="50" y1="41" x2="79" y2="16"/><line data-i="3" style="--c:#a66212" x1="50" y1="41" x2="13" y2="58"/><line data-i="4" style="--c:#b5502a" x1="50" y1="41" x2="87" y2="58"/><line data-i="5" style="--c:#25554a" x1="50" y1="41" x2="50" y2="86"/></svg>
       <div class="hub-core"><small>Dental Wellness Centre</small><h2>Why patients choose us</h2></div>
-      <div class="sat" data-i="1" style="--x:21%;--y:17%;--d:1"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.3 5.3 0 0112 6.2 5.3 5.3 0 0121.3 12c-2.3 4.4-9.3 9-9.3 9z"/></svg></div><div class="st"><h3>Gentle care</h3><p>Careful techniques designed to minimise discomfort.</p></div></div>
-      <div class="sat" data-i="2" style="--x:79%;--y:17%;--d:2"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 11-3-6.7"/><path d="M21 4v5h-5"/></svg></div><div class="st"><h3>Long-term follow-up</h3><p>Good treatment doesn't end when you leave the clinic.</p></div></div>
-      <div class="sat" data-i="3" style="--x:13%;--y:60%;--d:3"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><div class="st"><h3>Detailed consultation</h3><p>Time to understand your concerns before recommending treatment.</p></div></div>
-      <div class="sat" data-i="4" style="--x:87%;--y:60%;--d:4"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 5-3 7.5-7 9-4-1.5-7-4-7-9V6z"/></svg></div><div class="st"><h3>Conservative treatment</h3><p>Preserving natural teeth whenever clinically possible.</p></div></div>
-      <div class="sat" data-i="5" style="--x:50%;--y:88%;--d:5"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></div><div class="st"><h3>Honest recommendations</h3><p>Clear explanations of options, benefits and limitations.</p></div></div>
+      <div class="sat" data-i="1" style="--x:21%;--y:16%;--d:1;--c:#3c7c6e"><span class="num">01</span><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.3 5.3 0 0112 6.2 5.3 5.3 0 0121.3 12c-2.3 4.4-9.3 9-9.3 9z"/></svg></div><div class="st"><h3>Gentle care</h3><p>Careful techniques designed to minimise discomfort.</p></div></div>
+      <div class="sat" data-i="2" style="--x:79%;--y:16%;--d:2;--c:#2f6f9c"><span class="num">02</span><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 11-3-6.7"/><path d="M21 4v5h-5"/></svg></div><div class="st"><h3>Long-term follow-up</h3><p>Good treatment doesn't end when you leave the clinic.</p></div></div>
+      <div class="sat" data-i="3" style="--x:13%;--y:58%;--d:3;--c:#a66212"><span class="num">03</span><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><div class="st"><h3>Detailed consultation</h3><p>Time to understand your concerns before recommending treatment.</p></div></div>
+      <div class="sat" data-i="4" style="--x:87%;--y:58%;--d:4;--c:#b5502a"><span class="num">04</span><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 5-3 7.5-7 9-4-1.5-7-4-7-9V6z"/></svg></div><div class="st"><h3>Conservative treatment</h3><p>Preserving natural teeth whenever clinically possible.</p></div></div>
+      <div class="sat" data-i="5" style="--x:50%;--y:86%;--d:5;--c:#25554a"><span class="num">05</span><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></div><div class="st"><h3>Honest recommendations</h3><p>Clear explanations of options, benefits and limitations.</p></div></div>
     </div>
     <p class="hub-note">We focus on what you need, not what you don't.</p>
   </div>
