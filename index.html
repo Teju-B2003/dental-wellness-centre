@@ -595,6 +595,25 @@ section{overflow:hidden}
 .doc-card{border:4px solid var(--teal);box-shadow:0 0 0 9px rgba(60,124,110,.13),0 26px 54px -40px rgba(19,42,42,.85)}
 input,select,textarea{border:2px solid #c3d4cd}
 @media (max-width:1000px){.steps{gap:30px}.step .orb{margin-left:4px}}
+
+/* ===== flow arrows (hero points + patient journey) ===== */
+@keyframes arrowR{0%,100%{translate:0 0}50%{translate:4px 0}}
+@keyframes arrowD{0%,100%{translate:0 0}50%{translate:0 4px}}
+.trust{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;border-top:0;padding-top:0;margin-top:30px}
+.trust div{max-width:none;flex:none;position:relative;background:#fff;border:3px solid var(--c);border-radius:18px;padding:14px;flex-direction:column;align-items:flex-start;gap:9px;box-shadow:0 0 0 5px color-mix(in srgb,var(--c) 14%,transparent);font-size:.86rem;line-height:1.35;color:var(--navy);font-weight:500}
+.trust div:not(:last-child)::after,.journey li:not(:last-child)::after{content:"\2192";position:absolute;top:50%;display:grid;place-items:center;border-radius:50%;background:var(--c);color:#fff;line-height:1;z-index:3;box-shadow:0 0 0 3px #fff;transform:translateY(-50%);animation:arrowR 1.6s ease-in-out infinite}
+.trust div:not(:last-child)::after{right:-34px;width:28px;height:28px;font-size:1rem}
+.journey{gap:46px}
+.journey li:not(:last-child)::after{right:-44px;width:38px;height:38px;font-size:1.25rem}
+@media (max-width:960px){
+  .journey{grid-template-columns:1fr;gap:48px}
+  .journey li:not(:last-child)::after{content:"\2193";right:auto;left:50%;top:auto;bottom:-45px;transform:translateX(-50%);animation:arrowD 1.6s ease-in-out infinite}
+}
+@media (max-width:640px){
+  .trust{grid-template-columns:1fr;gap:34px}
+  .trust div{flex-direction:row;align-items:center}
+  .trust div:not(:last-child)::after{content:"\2193";right:auto;left:50%;top:auto;bottom:-32px;transform:translateX(-50%);animation:arrowD 1.6s ease-in-out infinite}
+}
 header{background:#fff!important;backdrop-filter:none!important}summary{min-height:44px;align-items:center}.dotnav a::before{content:"";position:absolute;inset:-9px}</style>
 <noscript><style>.reveal{opacity:1;transform:none}.sat{opacity:1;transform:none}</style></noscript>
 </head>
@@ -640,8 +659,8 @@ header{background:#fff!important;backdrop-filter:none!important}summary{min-heig
         <a class="btn btn-ghost" href="#treatments">Explore services</a>
       </div>
       <div class="trust">
-        <div><svg class="tick" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 3v6c0 5-3 7.5-7 9-4-1.5-7-4-7-9V6z"/></svg><span>Conservative, time-tested treatment</span></div>
         <div><svg class="tick" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><span>Detailed consultation before treatment</span></div>
+        <div><svg class="tick" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 3v6c0 5-3 7.5-7 9-4-1.5-7-4-7-9V6z"/></svg><span>Conservative, time-tested treatment</span></div>
         <div><svg class="tick" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Follow-up and maintenance care</span></div>
       </div>
     </div>
