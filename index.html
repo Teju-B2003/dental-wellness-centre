@@ -540,6 +540,61 @@ section{overflow:hidden}
   .sat{animation:none}
 }
 @media (max-width:640px){.hub{grid-template-columns:1fr}}
+
+/* ===== bold visual system (matches the "Why choose us" diagram) ===== */
+:is(.principles li,.trust div,.rv,.rv-hl span,.faq details,.cos-faq details,.lines li,.stat,.journey li):nth-child(5n+1){--c:#3c7c6e;--cl:#5fb8ae}
+:is(.principles li,.trust div,.rv,.rv-hl span,.faq details,.cos-faq details,.lines li,.stat,.journey li):nth-child(5n+2){--c:#2f6f9c;--cl:#6aa9d3}
+:is(.principles li,.trust div,.rv,.rv-hl span,.faq details,.cos-faq details,.lines li,.stat,.journey li):nth-child(5n+3){--c:#a66212;--cl:#e7b062}
+:is(.principles li,.trust div,.rv,.rv-hl span,.faq details,.cos-faq details,.lines li,.stat,.journey li):nth-child(5n+4){--c:#b5502a;--cl:#f0916b}
+:is(.principles li,.trust div,.rv,.rv-hl span,.faq details,.cos-faq details,.lines li,.stat,.journey li):nth-child(5n+5){--c:#25554a;--cl:#8fd0b8}
+.step:nth-child(1){--c:#3c7c6e}.step:nth-child(2){--c:#2f6f9c}.step:nth-child(3){--c:#b5502a}
+.svc{--c:#3c7c6e}.svc[data-cat~="repair"]{--c:#b5502a}.svc[data-cat~="smile"]{--c:#a66212}.svc[data-cat~="missing"]{--c:#25554a}.svc[data-cat~="straight"]{--c:#2f6f9c}.svc[data-cat~="gums"]{--c:#7b4b8a}.svc[data-cat~="kids"]{--c:#2f6f9c}
+/* hero pills + chips */
+.rrr i{border-width:3px}.rrr i:nth-child(1){border-color:#3c7c6e}.rrr i:nth-child(2){border-color:#2f6f9c}.rrr i:nth-child(3){border-color:#b5502a;background:#fff}
+.chip{border:2px solid var(--teal-lt)}
+.btn-ghost{border-width:2px}
+/* icon discs (hero trust list + philosophy checklist) */
+.tick,.trust .tick,.principles .tick{width:32px;height:32px;padding:7px;border-radius:50%;background:var(--c);color:#fff;margin-top:0;box-sizing:border-box;flex:none}
+.trust div{align-items:center}
+.principles li{align-items:center;border:2px solid color-mix(in srgb,var(--c) 50%,#fff);border-left:8px solid var(--c);background:linear-gradient(180deg,#fff,color-mix(in srgb,var(--c) 6%,#fff))}
+.principles li:hover{border-color:var(--c);border-left-color:var(--c)}
+.principles{gap:10px}.principles li{padding:11px 10px;gap:9px;font-size:.88rem;line-height:1.35;border-left-width:6px;min-width:0;overflow-wrap:anywhere}.principles .tick{width:28px;height:28px;padding:6px}
+/* stats */
+.stat{border-top:6px solid var(--cl)}
+/* three stages */
+.steps{gap:32px}
+.steps::before{top:72px;height:0;background:none;border-top:5px dotted var(--teal-lt);opacity:.85}
+.step{border:4px solid var(--c);border-radius:24px;box-shadow:0 0 0 8px color-mix(in srgb,var(--c) 14%,transparent),0 22px 40px -30px rgba(19,42,42,.6)}
+.step .orb{width:64px;height:64px;background:var(--c)!important;box-shadow:0 0 0 5px #fff,0 0 0 9px var(--c);margin:6px 0 28px 6px;font-size:1.25rem}
+.step .big::after{content:"";display:block;width:40px;height:4px;border-radius:4px;background:var(--c);margin-top:10px}
+/* services */
+.svc{border:3px solid var(--c)}
+.svc:hover{border-color:var(--c);box-shadow:0 0 0 7px color-mix(in srgb,var(--c) 20%,transparent),0 28px 50px -30px rgba(19,42,42,.5)}
+.svc-tag{background:var(--c);color:#fff}
+.svc-more{border-top:2px dashed color-mix(in srgb,var(--c) 40%,#fff)}
+.svc-more summary::after{background:var(--c);color:#fff}
+.svc-more dt{color:var(--c)}
+.svc-chip{border:2px solid var(--teal-lt)}
+/* journey */
+.journey li{border:3px solid var(--c);border-radius:20px;box-shadow:0 0 0 7px color-mix(in srgb,var(--c) 13%,transparent)}
+.journey li::before{width:46px;height:46px;top:-27px;left:22px;background:var(--c);box-shadow:0 0 0 4px #fff,0 8px 16px -8px rgba(19,42,42,.6)}
+/* reviews */
+.rv{border:3px solid var(--c);box-shadow:0 0 0 7px color-mix(in srgb,var(--c) 12%,transparent),0 20px 40px -34px rgba(19,42,42,.5)}
+.rv::before{content:"\201C";font-family:Fraunces,Georgia,serif;font-size:4.4rem;line-height:.7;height:34px;color:var(--c)}
+.rv-hl span{border:2px solid var(--c)}
+/* FAQ */
+.faq{border-top:0}
+.faq details{border:3px solid var(--c);border-radius:18px;padding:0 22px;margin-bottom:14px;background:#fff}
+.faq summary{padding:18px 0}
+.faq summary::after{content:"+";display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--c);color:#fff;font-size:1.25rem;line-height:1;flex:none}
+.faq details[open] summary::after{content:"\2013"}
+.cos-faq details{border:2px solid var(--cl)}
+.cos-faq summary::after{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--cl);color:#132a2a;flex:none}
+/* contact */
+.lines .ic{width:46px;height:46px;border-radius:50%;background:var(--c);color:#fff;border:0;box-shadow:0 0 0 4px color-mix(in srgb,var(--c) 22%,transparent)}
+.doc-card{border:4px solid var(--teal);box-shadow:0 0 0 9px rgba(60,124,110,.13),0 26px 54px -40px rgba(19,42,42,.85)}
+input,select,textarea{border:2px solid #c3d4cd}
+@media (max-width:1000px){.steps{gap:30px}.step .orb{margin-left:4px}}
 header{background:#fff!important;backdrop-filter:none!important}summary{min-height:44px;align-items:center}.dotnav a::before{content:"";position:absolute;inset:-9px}</style>
 <noscript><style>.reveal{opacity:1;transform:none}.sat{opacity:1;transform:none}</style></noscript>
 </head>
