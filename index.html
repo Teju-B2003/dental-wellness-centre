@@ -505,8 +505,33 @@ section{overflow:hidden}
   .svc-help{flex-direction:column;align-items:flex-start;padding:24px}
 }
 @media (prefers-reduced-motion:reduce){.svc,.svc figure svg,.svc figure img{transition:none}}
-.kicker.kicker-lg{font-size:1.3rem;font-weight:600;letter-spacing:0;text-transform:none;color:var(--teal-deep);gap:12px}.kicker.kicker-lg::before{width:36px}@media(max-width:600px){.kicker.kicker-lg{font-size:1.15rem}}header{background:#fff!important;backdrop-filter:none!important}summary{min-height:44px;align-items:center}.dotnav a::before{content:"";position:absolute;inset:-9px}</style>
-<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+.kicker.kicker-lg{font-size:1.3rem;font-weight:600;letter-spacing:0;text-transform:none;color:var(--teal-deep);gap:12px}.kicker.kicker-lg::before{width:36px}@media(max-width:600px){.kicker.kicker-lg{font-size:1.15rem}}.hub{position:relative;max-width:1100px;height:760px;margin:0 auto}
+.hub-lines{position:absolute;inset:0;width:100%;height:100%;z-index:0;overflow:visible}
+.hub-lines line{stroke:var(--teal-lt);stroke-width:2;stroke-dasharray:3 9;stroke-linecap:round;vector-effect:non-scaling-stroke;animation:hubflow 1.6s linear infinite;transition:stroke .2s,stroke-width .2s}
+@keyframes hubflow{to{stroke-dashoffset:-24}}
+.hub-core{position:absolute;left:50%;top:42%;width:236px;height:236px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle at 30% 22%,#2f7a68,#132a2a 75%);color:#fff;display:grid;place-content:center;text-align:center;padding:26px;z-index:2;box-shadow:0 30px 60px -28px rgba(19,42,42,.75),0 0 0 14px rgba(60,124,110,.13),0 0 0 32px rgba(60,124,110,.07)}
+.hub-core small{display:block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#bfe3d8;font-weight:600;margin-bottom:10px}
+.hub-core h2{color:#fff;font-size:1.75rem;line-height:1.15;margin:0}
+.sat{position:absolute;left:var(--x);top:var(--y);width:224px;height:224px;margin:-112px 0 0 -112px;border-radius:50%;background:#fff;border:1px solid var(--edge);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px 28px;z-index:1;box-shadow:0 22px 46px -30px rgba(19,42,42,.6);opacity:0;transform:scale(.78);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.3,1.2),border-color .2s,box-shadow .2s}
+.reveal.in .sat{opacity:1;transform:none;transition-delay:calc(var(--d)*.12s)}
+.reveal.in .sat:hover{transform:scale(1.06);border-color:var(--teal);box-shadow:0 30px 56px -28px rgba(19,42,42,.75);transition-delay:0s}
+.sat .ic{width:46px;height:46px;border-radius:50%;background:var(--wash);color:var(--teal-deep);display:grid;place-items:center;margin-bottom:10px;flex:none}
+.sat h3{font-size:1.1rem;line-height:1.2;margin:0 0 6px}
+.sat p{font-size:.84rem;line-height:1.45;margin:0}
+.hub-note{text-align:center;font-family:Fraunces,Georgia,serif;font-style:italic;font-size:1.25rem;color:var(--teal-deep);margin:44px auto 0;max-width:none}
+.hub:has(.sat[data-i="1"]:hover) .hub-lines line[data-i="1"]{stroke:var(--teal);stroke-width:3}.hub:has(.sat[data-i="2"]:hover) .hub-lines line[data-i="2"]{stroke:var(--teal);stroke-width:3}.hub:has(.sat[data-i="3"]:hover) .hub-lines line[data-i="3"]{stroke:var(--teal);stroke-width:3}.hub:has(.sat[data-i="4"]:hover) .hub-lines line[data-i="4"]{stroke:var(--teal);stroke-width:3}.hub:has(.sat[data-i="5"]:hover) .hub-lines line[data-i="5"]{stroke:var(--teal);stroke-width:3}
+@media (max-width:1000px){
+  .hub{height:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .hub-lines{display:none}
+  .hub-core{position:static;transform:none;grid-column:1/-1;justify-self:center;margin:18px 0 26px;width:210px;height:210px}
+  .sat{position:static;margin:0;width:auto;height:auto;border-radius:26px;flex-direction:row;align-items:flex-start;text-align:left;gap:16px;padding:22px}
+  .sat .ic{margin:0}
+  .sat{justify-content:flex-start}
+  .sat:last-of-type{grid-column:1/-1}
+}
+@media (max-width:640px){.hub{grid-template-columns:1fr}}
+header{background:#fff!important;backdrop-filter:none!important}summary{min-height:44px;align-items:center}.dotnav a::before{content:"";position:absolute;inset:-9px}</style>
+<noscript><style>.reveal{opacity:1;transform:none}.sat{opacity:1;transform:none}</style></noscript>
 </head>
 <body>
 <a class="sr" href="#main">Skip to main content</a>
@@ -854,21 +879,16 @@ section{overflow:hidden}
 
 <section id="why" class="sand">
   <div class="wrap reveal">
-    <div style="max-width:60ch;margin-bottom:44px">
-      <p class="kicker">Why choose us</p>
-      <h2>Why patients choose us</h2>
-      <p class="lede">We focus on what you need, not what you don't.</p>
+    <div class="hub">
+      <svg class="hub-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><line data-i="1" x1="50" y1="42" x2="21" y2="17"/><line data-i="2" x1="50" y1="42" x2="79" y2="17"/><line data-i="3" x1="50" y1="42" x2="13" y2="60"/><line data-i="4" x1="50" y1="42" x2="87" y2="60"/><line data-i="5" x1="50" y1="42" x2="50" y2="88"/></svg>
+      <div class="hub-core"><small>Dental Wellness Centre</small><h2>Why patients choose us</h2></div>
+      <div class="sat" data-i="1" style="--x:21%;--y:17%;--d:1"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.3 5.3 0 0112 6.2 5.3 5.3 0 0121.3 12c-2.3 4.4-9.3 9-9.3 9z"/></svg></div><div class="st"><h3>Gentle care</h3><p>Careful techniques designed to minimise discomfort.</p></div></div>
+      <div class="sat" data-i="2" style="--x:79%;--y:17%;--d:2"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 11-3-6.7"/><path d="M21 4v5h-5"/></svg></div><div class="st"><h3>Long-term follow-up</h3><p>Good treatment doesn't end when you leave the clinic.</p></div></div>
+      <div class="sat" data-i="3" style="--x:13%;--y:60%;--d:3"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><div class="st"><h3>Detailed consultation</h3><p>Time to understand your concerns before recommending treatment.</p></div></div>
+      <div class="sat" data-i="4" style="--x:87%;--y:60%;--d:4"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 5-3 7.5-7 9-4-1.5-7-4-7-9V6z"/></svg></div><div class="st"><h3>Conservative treatment</h3><p>Preserving natural teeth whenever clinically possible.</p></div></div>
+      <div class="sat" data-i="5" style="--x:50%;--y:88%;--d:5"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></div><div class="st"><h3>Honest recommendations</h3><p>Clear explanations of options, benefits and limitations.</p></div></div>
     </div>
-    <div class="cards" style="margin-top:0">
-      <div class="mini" data-tilt><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><h4 role="heading" aria-level="3">Detailed consultation</h4><p>Time to understand your concerns before recommending treatment.</p></div>
-      <div class="mini" data-tilt><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3l7 3v6c0 5-3 7.5-7 9-4-1.5-7-4-7-9V6z"/></svg></div><h4 role="heading" aria-level="3">Conservative treatment</h4><p>Preserving natural teeth whenever clinically possible.</p></div>
-      <div class="mini" data-tilt><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 20s-7-4.5-7-9a4 4 0 017-2.6A4 4 0 0119 11c0 4.5-7 9-7 9z"/></svg></div><h4 role="heading" aria-level="3">Gentle approach</h4><p>Careful techniques designed to minimize discomfort.</p></div>
-      <div class="mini" data-tilt><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h4 role="heading" aria-level="3">Time-tested treatments</h4><p>Proven dental principles rather than unnecessary trends.</p></div>
-      <div class="mini" data-tilt><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 19V5m0 14h16M8 15l4-6 3 4 4-7"/></svg></div><h4 role="heading" aria-level="3">Durable results</h4><p>Treatment that functions well and can be maintained over time.</p></div>
-      <div class="mini" data-tilt><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 4h9l3 3v13H6z"/><path d="M9 11h6M9 15h4"/></svg></div><h4 role="heading" aria-level="3">Honest recommendations</h4><p>Clear explanations of options, benefits and limitations.</p></div>
-      <div class="mini" data-tilt><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 12a9 9 0 1015-6.7"/><path d="M18 3v4h-4"/></svg></div><h4 role="heading" aria-level="3">Follow-up &amp; maintenance</h4><p>Good treatment doesn't end when you leave the clinic.</p></div>
-      <div class="mini" data-tilt><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s7-6.3 7-11a7 7 0 10-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div><h4 role="heading" aria-level="3">Neighbourhood practice</h4><p>Familiar faces, and care that continues over the years.</p></div>
-    </div>
+    <p class="hub-note">We focus on what you need, not what you don't.</p>
   </div>
   <svg class="wave paper" viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true"><path d="M0 32c240 32 480 32 720 0s480-32 720 0v32H0z"/></svg>
 </section>
