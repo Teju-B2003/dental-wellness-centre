@@ -863,6 +863,18 @@ input,select,textarea{border:2px solid #c3d4cd}
   .sat .num{top:-2px;right:-2px;min-width:22px;height:22px;line-height:22px;padding:0 4px;font-size:.58rem;border-width:2px}
   .hub-note{margin-top:16px}
 }
+
+@media (max-width:700px){
+  /* round 9: calmer phone hub - no pulsing halos, no sticky hover, text stays inside the circles */
+  .hub-core{animation:none;box-shadow:0 12px 24px -12px rgba(19,42,42,.7),0 0 0 5px rgba(60,124,110,.14);width:calc(var(--W)*.27);height:calc(var(--W)*.27);padding:4px}
+  .hub-core::before{display:none}
+  .hub-core h2{font-size:clamp(.6rem,2.9vw,.76rem)}
+  .sat,.sat:hover{scale:none;animation:none;box-shadow:inset 0 0 0 3px #fff,0 0 0 5px color-mix(in srgb,var(--c) 18%,transparent),0 14px 24px -16px rgba(19,42,42,.6);width:calc(var(--W)*.35);height:calc(var(--W)*.35);margin:calc(var(--W)*-.175) 0 0 calc(var(--W)*-.175);padding:4px 3px;gap:3px}
+  .sat::before{display:none}
+  .sat h3{font-size:clamp(.56rem,2.75vw,.68rem);line-height:1.15;hyphens:none;overflow-wrap:normal;word-break:normal}
+  .sat .ic{width:clamp(22px,7vw,28px);height:clamp(22px,7vw,28px)}
+  .hub:has(.sat[data-i]:hover) .hub-lines.hub-lines-m line[data-i]{stroke-width:3;stroke-dasharray:2 8;opacity:.9}
+}
 header{background:#fff!important;backdrop-filter:none!important}summary{min-height:44px;align-items:center}.dotnav a::before{content:"";position:absolute;inset:-9px}</style>
 <noscript><style>.reveal{opacity:1;transform:none}.sat{opacity:1;transform:none}</style></noscript>
 </head>
