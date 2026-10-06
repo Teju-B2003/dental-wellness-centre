@@ -911,6 +911,15 @@ input,select,textarea{border:2px solid #c3d4cd}
 .sat p{font-size:.76rem;line-height:1.38}
 .sat .num{top:6px;right:8px;z-index:2}
 }
+@keyframes toothmove{0%,100%{translate:0 0;rotate:-1.4deg}50%{translate:0 -11px;rotate:1.4deg}}
+@keyframes corebeat{0%,100%{scale:1}50%{scale:1.05}}
+@keyframes hubflow2{to{stroke-dashoffset:-24}}
+@media (min-width:1001px),(max-width:700px){
+.hub .sat{animation:toothmove 4.6s ease-in-out infinite!important;animation-delay:calc(var(--d)*-.9s)!important}
+.hub .hub-core{animation:corebeat 3.2s ease-in-out infinite!important}
+.hub .hub-lines line{animation:hubflow2 1.2s linear infinite!important}
+}
+@media (min-width:1001px){.hub .sat:hover{animation-play-state:paused!important}}
 header{background:#fff!important;backdrop-filter:none!important}summary{min-height:44px;align-items:center}.dotnav a::before{content:"";position:absolute;inset:-9px}</style>
 <noscript><style>.reveal{opacity:1;transform:none}.sat{opacity:1;transform:none}</style></noscript>
 </head>
@@ -1393,7 +1402,7 @@ header{background:#fff!important;backdrop-filter:none!important}summary{min-heig
       <div><h4 role="heading" aria-level="2">Contact</h4><ul><li>Old Town, 1st Floor, R J Arcade,<br>Jakkur Main Rd, Shivanahalli,<br>Yelahanka, Bengaluru 560064</li><li><a href="tel:+919739521413">+91 97395 21413</a></li><li>Mon–Fri: 11:30 am – 9 pm</li><li>Saturday: 12 – 9 pm</li><li>Sunday: Closed</li><li><a href="https://www.google.com/maps/place/Dental+wellness+centre/@13.090326,77.6020608,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae184ddc57c3c9:0xaca791f20a6096f2!8m2!3d13.090326!4d77.6020608!16s%2Fg%2F11c5ssqyr4" target="_blank" rel="noopener noreferrer">Google Maps</a></li></ul></div>
     </div>
     <div class="legal">
-      <span>© <span id="yr">2026</span> Dental Wellness Centre. All rights reserved. <small style="opacity:.55">build 13</small></span>
+      <span>© <span id="yr">2026</span> Dental Wellness Centre. All rights reserved. <small style="opacity:.55">build 14</small></span>
       
     </div>
   </div>
