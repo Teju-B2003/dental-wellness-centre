@@ -813,6 +813,25 @@ input,select,textarea{border:2px solid #c3d4cd}
   .svc [class*="more"],.svc-foot,.svc summary,.svc .go{display:none}
 }
 @media (max-width:700px){.svc figure{aspect-ratio:4/3}}
+
+@media (max-width:700px){
+  /* round 5: service cards fit like the reference - wide photo on top, title and text below, 2 per row, no scrolling */
+  .svc-filter,.tabs.svc-filter{display:flex;flex-wrap:wrap;justify-content:center;overflow:visible;gap:6px;margin-bottom:12px;padding:0}
+  .svc-filter .svc-chip{padding:6px 12px;font-size:.74rem;min-height:36px;flex:none}
+  #treatments .svc-grid{grid-template-columns:1fr 1fr;gap:12px;align-items:start}
+  .svc{border-radius:16px}
+  .svc figure{aspect-ratio:5/3;margin:0}
+  .svc figure img{width:100%;height:100%;object-fit:cover}
+  .svc-body{padding:10px 11px 12px}
+  .svc-tag{display:block;font-size:.56rem;margin-bottom:4px}
+  .svc h3{font-size:.86rem;line-height:1.22;margin:0 0 4px}
+  .svc p{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;font-size:.74rem;line-height:1.35;margin:0 0 6px}
+  .svc .svc-more{display:block;padding-top:6px;margin:0}
+  .svc .svc-more summary{display:flex;font-size:.74rem;min-height:36px}
+  .svc [class*="more"],.svc-foot,.svc summary,.svc .go{display:revert}
+  .svc .svc-more dl{font-size:.74rem}
+}
+@media (max-width:700px){#treatments .svc-grid{align-items:stretch}.svc-tag{display:none}.svc{display:flex;flex-direction:column}.svc-body{flex:1;display:flex;flex-direction:column}.svc .svc-more{margin-top:auto}}
 header{background:#fff!important;backdrop-filter:none!important}summary{min-height:44px;align-items:center}.dotnav a::before{content:"";position:absolute;inset:-9px}</style>
 <noscript><style>.reveal{opacity:1;transform:none}.sat{opacity:1;transform:none}</style></noscript>
 </head>
