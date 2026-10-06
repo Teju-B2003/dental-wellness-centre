@@ -891,6 +891,26 @@ input,select,textarea{border:2px solid #c3d4cd}
   .sat[data-i="5"] h3{font-size:clamp(.5rem,2.45vw,.64rem)}.sat h3{font-size:clamp(.56rem,2.75vw,.7rem);font-weight:700;line-height:1.12;color:#12302a}
   .sat .num{top:-4px;right:-2px;z-index:2}
 }
+@media (min-width:1001px){
+.hub{margin-top:40px;margin-bottom:80px}
+.tooth{display:block;position:absolute;inset:0;width:100%;height:100%;overflow:visible;z-index:-1;filter:drop-shadow(0 14px 16px rgba(19,42,42,.25))}
+.tooth path{fill:color-mix(in srgb,var(--c) 7%,#fff);stroke:var(--c);stroke-width:3.5;stroke-linejoin:round}
+.hub-core .tooth path{fill:url(#tg);stroke:#fff}
+.hub-core{background:none;border:0;border-radius:0;box-shadow:none;animation:none;width:270px;height:302px;top:40%;padding:44px 46px 118px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.hub-core::before{display:none}
+.hub-core small{margin-bottom:6px}
+.hub-core h2{font-size:1.5rem}
+.sat,.sat:hover{background:none;border:0;border-radius:0;box-shadow:none;width:256px;height:287px;margin:-143px 0 0 -128px;padding:38px 44px 112px;z-index:1}
+.sat::before{display:none}
+.sat:hover{scale:1.05}
+.sat:hover .tooth{filter:drop-shadow(0 18px 20px rgba(19,42,42,.35))}
+.sat .ic{width:40px;height:40px;margin-bottom:6px}
+.sat .ic svg{width:22px;height:22px}
+.sat h3{font-size:1.02rem;font-weight:700;color:#12302a;margin-bottom:5px;padding-bottom:0}
+.sat h3::after{display:none}
+.sat p{font-size:.76rem;line-height:1.38}
+.sat .num{top:6px;right:8px;z-index:2}
+}
 header{background:#fff!important;backdrop-filter:none!important}summary{min-height:44px;align-items:center}.dotnav a::before{content:"";position:absolute;inset:-9px}</style>
 <noscript><style>.reveal{opacity:1;transform:none}.sat{opacity:1;transform:none}</style></noscript>
 </head>
@@ -1373,7 +1393,7 @@ header{background:#fff!important;backdrop-filter:none!important}summary{min-heig
       <div><h4 role="heading" aria-level="2">Contact</h4><ul><li>Old Town, 1st Floor, R J Arcade,<br>Jakkur Main Rd, Shivanahalli,<br>Yelahanka, Bengaluru 560064</li><li><a href="tel:+919739521413">+91 97395 21413</a></li><li>Mon–Fri: 11:30 am – 9 pm</li><li>Saturday: 12 – 9 pm</li><li>Sunday: Closed</li><li><a href="https://www.google.com/maps/place/Dental+wellness+centre/@13.090326,77.6020608,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae184ddc57c3c9:0xaca791f20a6096f2!8m2!3d13.090326!4d77.6020608!16s%2Fg%2F11c5ssqyr4" target="_blank" rel="noopener noreferrer">Google Maps</a></li></ul></div>
     </div>
     <div class="legal">
-      <span>© <span id="yr">2026</span> Dental Wellness Centre. All rights reserved. <small style="opacity:.55">build 12</small></span>
+      <span>© <span id="yr">2026</span> Dental Wellness Centre. All rights reserved. <small style="opacity:.55">build 13</small></span>
       
     </div>
   </div>
