@@ -832,6 +832,17 @@ input,select,textarea{border:2px solid #c3d4cd}
   .svc .svc-more dl{font-size:.74rem}
 }
 @media (max-width:700px){#treatments .svc-grid{align-items:stretch}.svc-tag{display:none}.svc{display:flex;flex-direction:column}.svc-body{flex:1;display:flex;flex-direction:column}.svc .svc-more{margin-top:auto}}
+
+@media (max-width:700px){
+  /* round 6: three service cards per row */
+  #treatments .svc-grid{grid-template-columns:repeat(3,1fr);gap:8px}
+  .svc{border-radius:12px;border-width:2px}
+  .svc figure{aspect-ratio:4/3}
+  .svc-body{padding:6px 6px 8px}
+  .svc h3{font-size:.7rem;line-height:1.2;margin:0 0 3px}
+  .svc p{font-size:.6rem;line-height:1.3;-webkit-line-clamp:3;margin:0}
+  .svc .svc-more{display:none}
+}
 header{background:#fff!important;backdrop-filter:none!important}summary{min-height:44px;align-items:center}.dotnav a::before{content:"";position:absolute;inset:-9px}</style>
 <noscript><style>.reveal{opacity:1;transform:none}.sat{opacity:1;transform:none}</style></noscript>
 </head>
