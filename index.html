@@ -846,7 +846,7 @@ input,select,textarea{border:2px solid #c3d4cd}
 @media (max-width:700px){.tabs.svc-filter{margin:0 0 14px;padding:0;gap:6px}.svc-filter .svc-chip{padding:5px 11px;font-size:.72rem;min-height:36px}}
 
 .hub-lines-m{display:none}
-@media (max-width:700px){
+@media (max-width:1000px){
   /* round 8: hub-and-spoke on phone - core in the middle, badges split left and right */
   .hub{--W:min(calc(100vw - 32px),420px);display:block;position:relative;width:var(--W);height:auto;aspect-ratio:1/1.42;max-width:none;margin:0 auto;gap:0}
   .hub-lines.hub-lines-m{display:block}
@@ -864,7 +864,7 @@ input,select,textarea{border:2px solid #c3d4cd}
   .hub-note{margin-top:16px}
 }
 
-@media (max-width:700px){
+@media (max-width:1000px){
   /* round 9: calmer phone hub - no pulsing halos, no sticky hover, text stays inside the circles */
   .hub-core{animation:none;box-shadow:0 12px 24px -12px rgba(19,42,42,.7),0 0 0 5px rgba(60,124,110,.14);width:calc(var(--W)*.27);height:calc(var(--W)*.27);padding:4px}
   .hub-core::before{display:none}
@@ -877,7 +877,7 @@ input,select,textarea{border:2px solid #c3d4cd}
 }
 
 .tooth{display:none}
-@media (max-width:700px){
+@media (max-width:1000px){
   /* round 10: tooth-shaped badges instead of circles */
   .hub{aspect-ratio:1/1.2}
   .tooth{display:block;position:absolute;inset:0;width:100%;height:100%;overflow:visible;z-index:-1;filter:drop-shadow(0 8px 8px rgba(19,42,42,.22))}
@@ -914,7 +914,7 @@ input,select,textarea{border:2px solid #c3d4cd}
 @keyframes toothmove{0%,100%{translate:0 0;rotate:-1.4deg}50%{translate:0 -11px;rotate:1.4deg}}
 @keyframes corebeat{0%,100%{scale:1}50%{scale:1.05}}
 @keyframes hubflow2{to{stroke-dashoffset:-24}}
-@media (min-width:1001px),(max-width:700px){
+@media (min-width:1001px),(max-width:1000px){
 .hub .sat{animation:toothmove 4.6s ease-in-out infinite!important;animation-delay:calc(var(--d)*-.9s)!important}
 .hub .hub-core{animation:corebeat 3.2s ease-in-out infinite!important}
 .hub .hub-lines line{animation:hubflow2 1.2s linear infinite!important}
@@ -934,6 +934,14 @@ input,select,textarea{border:2px solid #c3d4cd}
 @media (max-width:700px){.svc-inc{font-size:.5rem;line-height:1.3;margin-top:4px}}
 header{background:#fff!important;backdrop-filter:none!important}summary{min-height:44px;align-items:center}.dotnav a::before{content:"";position:absolute;inset:-9px}@media (min-width:861px) and (max-width:1120px){.header-cta{display:none}nav.main{gap:16px}nav.main a{white-space:nowrap;font-size:.92rem}.brand b{white-space:nowrap;font-size:1.02rem}.brand em{white-space:nowrap;font-size:.6rem;letter-spacing:.06em}}
 @media (min-width:701px){.rv-grid{align-items:start}.rv-grid .rv:last-child{grid-column:1/-1}}
+@media (min-width:701px) and (max-width:1000px){
+  .hub{--W:min(640px,calc(100vw - 48px));margin-top:20px;margin-bottom:30px}
+  .hub-core h2{font-size:1rem;text-wrap:balance}
+  .sat h3{font-size:.84rem}
+  .sat[data-i="5"] h3{font-size:.68rem}
+  .sat .ic{width:30px;height:30px}
+  .sat .num{min-width:26px;height:26px;line-height:26px;font-size:.7rem}
+}
 </style>
 <noscript><style>.reveal{opacity:1;transform:none}.sat{opacity:1;transform:none}</style></noscript>
 </head>
@@ -1286,7 +1294,7 @@ header{background:#fff!important;backdrop-filter:none!important}summary{min-heig
       <div><h4 role="heading" aria-level="2">Contact</h4><ul><li>1st Floor, R J Arcade,<br>Jakkur Main Rd, Shivanahalli,<br>Yelahanka Old Town, Bengaluru 560064</li><li><a href="tel:+919739521413">+91 97395 21413</a></li><li>Mon–Sat: 12 pm – 9 pm</li><li>Sunday: Prior appointments only</li><li><a href="https://www.google.com/maps/place/Dental+wellness+centre/@13.090326,77.6020608,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae184ddc57c3c9:0xaca791f20a6096f2!8m2!3d13.090326!4d77.6020608!16s%2Fg%2F11c5ssqyr4" target="_blank" rel="noopener noreferrer">Google Maps</a></li></ul></div>
     </div>
     <div class="legal">
-      <span>© <span id="yr">2026</span> Dental Wellness Centre. All rights reserved. <small style="opacity:.55">build 46</small></span>
+      <span>© <span id="yr">2026</span> Dental Wellness Centre. All rights reserved. <small style="opacity:.55">build 47</small></span>
       
     </div>
   </div>
